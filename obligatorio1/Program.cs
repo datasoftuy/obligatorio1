@@ -15,6 +15,8 @@ namespace obligatorio1
             string[] usuarios = new string[0];
             int[,] jugadas = new int[0, 0];
             int largo;
+            string cambiarvector = "";
+            
 
             while (opcioncinco != "0")
             {
@@ -25,13 +27,29 @@ namespace obligatorio1
 
                     case "1":
 
-                        largo = largovector();
-                        usuarios = new string [largo];
-                        
-                        Console.WriteLine("El sistema se inicio con cantidad de apuestas: "+ usuarios.Length);
-                        
-                    
-                           
+
+                        if (usuarios.Length > 0)
+
+                        {
+
+                            Console.WriteLine("El sistema ya tiene cargado la cantidad de apuestas");
+                            Console.Write("Desea continuar? (SI/NO): ");
+                            cambiarvector = Console.ReadLine();
+
+
+                            if (cambiarvector.ToLower() == "si")
+
+                            {
+
+                                largo = largovector();
+
+                                usuarios = new string[largo];
+
+                                Console.WriteLine("El sistema se inicio con cantidad de apuestas: " + usuarios.Length);
+                            
+                            }
+
+                        }
 
                         break;
 
@@ -125,6 +143,7 @@ namespace obligatorio1
         static int largovector()
         {
                int largoretornado = 0;
+               
 
             Console.Write("\n\tIngrese la cantidad de clientes: ");
            largoretornado = Convert.ToInt32(Console.ReadLine());   
