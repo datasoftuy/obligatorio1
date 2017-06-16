@@ -14,6 +14,7 @@ namespace obligatorio1
             string opcionlistado = "";
             string[] usuarios = new string[0];
             int[,] jugadas = new int[0, 0];
+            int largo;
 
             while (opcioncinco != "0")
             {
@@ -24,9 +25,13 @@ namespace obligatorio1
 
                     case "1":
 
-                        Console.WriteLine("Ingresar la cantidad de clientes de la agencia");
-                        Console.ReadLine();
-                        largovector(usuarios);
+                        largo = largovector();
+                        usuarios = new string [largo];
+                        
+                        Console.WriteLine("largo es: "+ usuarios.Length);
+                        
+                    
+                           
 
                         break;
 
@@ -117,35 +122,16 @@ namespace obligatorio1
         }
         #endregion
 
-        static String[] largovector(string[] usuarios)
+        static int largovector()
         {
+               int largoretornado = 0;
 
-            
-            string[] clientesfuncion = usuarios;
-            string cambiar ="";
-            int largo;
-             if (clientesfuncion.Length > 0)
-           {
-               Console.Write("\n\tSi cambia este parametro se perderan los clientes\n");
-               Console.Write("Desea continuar? (SI/NO): ");
-               cambiar = Console.ReadLine();
-           }
-           if (cambiar.ToLower() == "si")
-           {
-               Console.Write("\n\tIngrese la cantidad de clientes: ");
-               clientesfuncion = new string[Convert.ToInt32(Console.ReadLine())];
-               Console.WriteLine("\n\n\tEl sistema se inicio con la cantidad de clientes: " + clientesfuncion.Length);
-           }
-           else
-           { Console.WriteLine("\n\n\tNo se ha cambiado la cantidad de clientes del sistema."); }
-           Console.Write("\n\t\tPulsar ENTER para CONTINUAR.");
-          
-            Console.ReadLine();
+            Console.Write("\n\tIngrese la cantidad de clientes: ");
+           largoretornado = Convert.ToInt32(Console.ReadLine());   
+              
+           Console.ReadLine();
 
-
-
-
-            return usuarios[];
+           return largoretornado;
         
         }
 
