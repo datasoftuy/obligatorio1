@@ -28,7 +28,7 @@ namespace obligatorio1
                         largo = largovector();
                         usuarios = new string [largo];
                         
-                        Console.WriteLine("largo es: "+ usuarios.Length);
+                        Console.WriteLine("El sistema se inicio con cantidad de apuestas: "+ usuarios.Length);
                         
                     
                            
